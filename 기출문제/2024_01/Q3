@@ -1,0 +1,38 @@
+<employee>
+no  firt_name   last_name   project_id
+1   John        Doe         10
+2   Jim         Carry       20
+3   Rachel      Redmond     10
+
+<project>
+project_id  name
+10          alpha
+20          beta
+10          gamma
+
+<sql문>
+select count(*)
+from employee as e join project as p on e.project_id = p.project_id
+where p.name in (
+    select name from project p where p.project_id in (
+        select project_id from employee group by project_id having count(*) < 2
+    )
+);
+
+이 풀이에서
+
+맨처음에 select project_id from employee group by project_id having count(*) < 2 를 실행하면
+20이 나옴 여기서 헤깔릴수잇는데 조건이 2개가 미만인거니까 카운트가 1인 20만 나와야됨
+
+그러면 이제 
+select name from project p where p.project_id in (20) 을 하면
+beta가 나옴
+
+그러면 
+from employee as e join project as p on e.project_id = p.project_id
+where p.name in (gamma) 를 하면
+
+답은 1
+ 만약 having count(*) >= 2 였으면
+10이나오고 그러면 값이 alpha,  beta가 있으니까 중복조인에 의해
+값이 4여야됨

@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0;
+        try {
+            func();
+        } catch(NullPointerException e) {
+            sum = sum + 1;
+        } catch (Exception e) {
+            sum = sum + 10;
+        } finally {
+            sum = sum + 100;
+        }
+        System.out.print(sum);
+    }
+
+    static void func() throws Exception {
+        throw new NullPointerException();
+    }
+}
+
+// finally는 예외 발생 여부와 관계없이 항상 실행됨
+//답 : 101 try -> catch(에러실행) -> finally 순으로 실행

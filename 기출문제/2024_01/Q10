@@ -1,0 +1,94 @@
+#include <stdio.h>
+struct Node {
+    int value;
+    struct Node* next;
+}
+
+void func(struct Node* node) {
+    while(node != Null && node -> next != Null) {
+        int t = node -> value;
+        node -> value = node -> next -> value;
+        node -> next -> value = t;
+        node = node -> next -> next;
+    }
+}
+
+int main() {
+    struct Node n1 = {1, NULL};
+    struct Node n2 = {2, NULL};
+    struct Node n3 = {3, NULL};
+    n1.next = &n3;
+    n3.next = &n2;
+    func(&n1);
+    struct Node* current = &n1;
+    while(current != NULL) {
+        printf("%d", current -> value);
+        current = current -> next;
+    }
+    return 0;
+}
+
+/*
+struct Node {
+    int value;
+    struct Node* next;
+}
+
+Node 구조체는
+ int value (값 저장),
+ struct Node* next : 다음 노드를 가리키는 포인터(연결 리스트 만들기용)
+
+
+void func(struct Node* node) {
+    while(node != NULL && node->next != NULL) {
+        int t = node->value;
+        node->value = node->next->value;
+        node->next->value = t;
+        node = node->next->next;
+    }
+}
+    
+✔️ 핵심 동작
+두 개씩 묶어서 값만 바꿔치기(swap) 하는 함수야.
+구조는 그대로 두고, **값(value)**만 바꿈.
+
+노드 A: value=1
+노드 B: value=2
+
+int t = A.value;          // t = 1
+A.value = B.value;        // A.value = 2
+B.value = t;              // B.value = 1
+
+
+int main() {
+    struct Node n1 = {1, NULL};
+    struct Node n2 = {2, NULL};
+    struct Node n3 = {3, NULL};
+    n1.next = &n3;
+    n3.next = &n2;
+    
+    연결 구조
+    n1 → n3 → n2 → NULL
+    1    3     2
+
+    func(&n1); 값 바꿔치기
+    n1 → n3 → n2 → NULL
+     3    1     2
+
+
+    struct Node* current = &n1;
+    while(current != NULL) {
+        printf("%d", current -> value);
+        current = current -> next;
+    }
+
+    current = n1 → value = 3 → 출력 3
+    current = n3 → value = 1 → 출력 1
+    current = n2 → value = 2 → 출력 2
+    
+    return 0;
+}
+
+닶 312
+
+*/

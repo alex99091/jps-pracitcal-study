@@ -1,0 +1,39 @@
+#include <stdio.h>
+int func () {
+    static int x = 0;
+    x += 2;
+    return x;
+}
+
+int main() {
+    int x = 0;
+    int sum = 0;
+    for(int i = 0; i < 4; i++) {
+        x++;
+        sum += func();
+    }
+    printf("%d", sum);
+    return 0;
+}
+
+/*
+풀이: i = 0,1,2,3까지 실행됨
+i = 0 -> x = 1 -> func() -> x = 3; sum = 3
+i = 1 -> x = 4 -> func() -> x = 6; sum = 9
+i = 2 -> x = 7 -> func() -> x = 9; sum = 18
+i = 3 -> x = 9 -> func() -> x = 11; sum = 29
+
+틀림
+
+이유는 func() 내부에 int x 는 static으로 선언되어있기때문에 외부의 영향을 받지않고
+main에서 실행되는 x++ 은 지역변수만 증가시킴
+결국 sum += func()하는것은 해당 function의 변수만 고려해야함
+다시 풀이해보자면
+
+i = 0 -> x = 2 -> sum = 2
+i = 1 -> x = 4 -> sum = 6
+i = 2 -> x = 6 -> sum = 12
+i = 3 -> x = 9 -> sum = 20
+정답 20
+
+*/

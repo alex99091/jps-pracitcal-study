@@ -1,0 +1,40 @@
+def func(value) :
+    if type(value) == type(100) :
+        return 100
+    elif type(value) == type("") :
+        return len(value)
+    else:
+        return 20
+a = "100.0"
+b = 100.0
+c = (100,200)
+
+printf(func(a) + func(b) + func(c))
+
+풀이:
+파이썬에서 형변환에 관련된문제인듯
+a의 타입은 string
+b의 타입은 double
+c의 타입은 (int,int)인거같고
+
+type(100)은 type(int)
+type("") = string 
+
+java와 다르게 equalto나 == 의 주소값참조는 배제하고 계산해보면
+
+func(a) 의 값은 100
+func(b) 의 값도 100
+func(c) 의 값은 20
+
+220인데
+
+실제 닶은 45야 뭐가 문제일까?
+
+오마이갓
+
+1번의 케이스는 len(value)를 반환하기때문에
+func(a)의 값은 5야,
+그리고 func(b)의 값도 float과 doulbe비교이기 때문에 값이 20
+3번째도 튜플이라 값이 20
+
+답은 45야.. 

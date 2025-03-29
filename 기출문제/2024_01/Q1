@@ -1,0 +1,39 @@
+public class Main {
+    static String[] x = new String[3];
+    static void func(String[] x, int y) {
+        for(int i = 1; i < 3; i++) {
+            if(x[i-1].equals(x[i])) {
+                System.out.print("O");
+            } else {
+                System.out.print("N");
+            }
+        }
+
+        for (String z : x) {
+            System.out.print(z);
+        }
+    }
+
+    public static void main(String[] args) {
+        x[0] = "A";
+        x[1] = "A";
+        x[2] = new String("A");
+        func(x,3);
+    }
+}
+
+/*
+ * x = [A,A,A] 가 할당됨
+ * "A"와 new String"A" 는 모두 String 값인 A임 주소만 다름
+ * 
+ * 이때, y = 3이니
+ * 첫번째 포문에는 i= 1, i = 2 케이스가 실행
+ * i = 1 일때 x[0] == x[1] 이니 O
+ * i = 2 일때 x[1] == x[2] 이니 O
+ * for 문을돌며 AAA가 출력
+ * 따라서 답은 OOAAA
+ * 
+ * .equals 내용 비교
+ * == 은 주소 비교
+ * 
+ */

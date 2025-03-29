@@ -1,0 +1,20 @@
+다음에 제시된 URL 구조에서 <보기>의 순서대로 URl에 해당하는 번호(1~5)를 쓰시오
+
+1 query: 서버에 전달할 추가 데이터를
+2 path: 서버 내의 특정자원을 가리키는 경로
+3 scheme: 리소스에 접근하는 방법이나 프로토콜
+4 authority: 사용자 정보, 호스트명, 포트 번호
+5 fragment: 특정 문서내의 위치
+
+foo://example.com:8042/over/there?name=ferret#nose
+1            2             3         4         5
+
+1번: 4 authority = foo
+2번: 3 scheme = example.com:8042
+3번: 1 query = over/there 서버에 전달할 추가 데이터들
+4번: 2 path = 서버 내의 특정자원을 가르키는 경로
+5번: 5 fragment = 특정 문서내의 위치
+
+URL의 실제 구성 순서는
+scheme → authority → path → query → fragment
+= 3 → 4 → 2 → 1 → 5

@@ -1,0 +1,33 @@
+네트워크 및 인터넷과 관련된 다음 설명에 해당하는 용어를 <보기>에서 찾아 기호로 쓰시오.
+
+재난 및 군사현장과같이 별도의 고정된 유선망을 구축할 수 없는 장소에서 모바일 호스트만을 가지고 구성한 네트워크이다.
+'망을 구성한 후 단기간 사용되는 경우나 유선망을 구성하기  어려운 경우에 적합하다.'
+멀티홉라우팅 기능을 지원한다
+
+답: ㄹ. Ad-ho Network
+
+ㄱ. Mesh Network
+ㄴ. Peer-toPeer-Network
+ㄷ. Virtual Private Network
+ㄹ. Ad-hoc Network
+ㅁ. Sensor Network
+ㅂ. Infrastructure Network
+
+
+ㄱ. Mesh Network
+모든 노드가 서로 직접 연결되거나 중계 역할을 하는 네트워크. 장애에 강하고 자가 복구 능력이 있음.
+
+ㄴ. Peer-to-Peer Network
+중앙 서버 없이 각 노드가 대등한 지위로 자원(파일 등)을 공유하는 네트워크.
+
+ㄷ. Virtual Private Network (VPN)
+공용 인터넷 상에서 사설망처럼 안전하게 통신할 수 있도록 암호화된 터널을 구성하는 기술.
+
+ㄹ. Ad-hoc Network
+고정된 인프라 없이 모바일 노드들만으로 구성되는 임시 네트워크. 멀티 홉 라우팅을 통해 통신함.
+
+ㅁ. Sensor Network
+온도, 습도, 진동 등 환경 정보를 수집하는 센서 노드들로 구성된 네트워크. IoT 기반 서비스에 많이 사용됨.
+
+ㅂ. Infrastructure Network
+AP(Access Point) 등 고정된 유선 기반 장비를 통해 통신하는 전통적인 무선 네트워크 구조.
