@@ -1,0 +1,15 @@
+public class Test {
+    public static void main(String[] args) {
+        String arr = "ITISTESTSTRING";
+        String[] result = str.split("T");
+        System.out.print(result[3]);
+    }
+}
+
+/*
+ * result는 "T"를 기준으로 스플릿됨
+ * result배열에는 [I, IS, ES, S, RING]이 담김
+ * 실행결과 따라서 result[3] = S
+ */
+
+ 

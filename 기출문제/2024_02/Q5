@@ -1,0 +1,46 @@
+#include <stdio.h>
+void swap(int a, int b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+
+int main() {
+    int a = 11;
+    int b = 19;
+    swap(a,b);
+    switch(a) {
+        case 1:
+            b += 1;
+        case 11:
+            b += 2;
+        default:
+            b += 3;
+            break;
+    }
+    printf("%d", a-b);
+}
+
+/*
+풀이 a = 11 b = 19 -> swap(a,b) 이후 a = 19, b = 11로 변하고 
+switch(a)구문에 의해 b = 14가되어
+답을 5로 했으나 틀림.
+
+처음 a = 11, b = 19 이고, swap(a, b)를 호출하지만 C는 call by value 방식이기 때문에 실제 값은 바뀌지 않는다.
+
+만약 실제 값을 바꾸고 싶다면 포인터를 사용하여 아래와 같이 해야 한다:
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+호출부에서는 swap(&a, &b); 로 호출해야 값이 바뀐다.
+
+따라서 원래 swap은 영향을 주지 않아 a = 11, b = 19 상태로 switch문을 실행하게 된다.
+
+switch(a)에서 a가 11이므로 case 11부터 실행되고, b += 2로 인해 b = 21이 된다.  
+그 뒤에 break가 없으므로 default까지 순차적으로 실행되어 b += 3이 추가되어 b = 24가 된다.
+
+결국 a - b = 11 - 24 = -13이 되어 출력값은 -13이 된다.
+
+*/

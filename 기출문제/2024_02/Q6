@@ -1,0 +1,48 @@
+#include <stdio.h>
+void func(char *d, char *s) {
+    while (*s) {
+        *d = *s;
+        d++;
+        s++;
+    }
+    *d = '\0';
+}
+
+int main() {
+    char* str1 = "first";
+    char str2[50] = "teststring";
+    int result = 0;
+    func(str2, str1);
+    for (int i =0; str2[i] != '\0'; i++) {
+        result += i;
+    }
+    printf("%d\n", result);
+    return 0;
+}
+
+/*
+풀이: 
+char1 에는 first 가 할당
+str2 = teststring이 할당 : 포인터로 할당되지 않아 값이 바뀌지않음
+func(str2, str1) 실행
+func(teststring, first)면
+s를 순회하면서
+*d 의 char 값과 *s의 char 을 치환하고 d++ s++를 증가시킴
+while문 내부에 s: f -> i -> r -> s -> t ->'\0' 순으로 실행
+따라서 teststring은 first ring 으로 변환됨
+
+기본적으로 C에서는 문자열을 할당할때 '\0' null값이 들어감
+
+따라서 first의 len = 5이지만 주소는 6바이트임
+
+char* str1 = "first";            // 문자열 리터럴 → 'f' 'i' 'r' 's' 't' '\0'
+char str2[50] = "teststring";    // → 't' 'e' 's' 't' 's' 't' 'r' 'i' 'n' 'g' '\0'
+
+func(str2, str1);                // str1 내용을 str2로 복사 → 'f' 'i' 'r' 's' 't' '\0' ...
+
+for (int i = 0; str2[i] != '\0'; i++) {
+    result += i;                 // i = 0 + 1 + 2 + 3 + 4 = 10
+}
+
+
+*/

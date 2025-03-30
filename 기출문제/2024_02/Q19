@@ -1,0 +1,48 @@
+#include <stdio.h>
+struct node {
+    int data;
+    struct node *Next;
+}
+
+int main() {
+    struct node *head = NULL;
+    struct node a = {10, 0};
+    struct node b = {20, 0};
+    struct node c = {30, 0};
+    head = &a;
+    a.Next = &b;
+    b.Next = &c;
+    printf("%d", head -> Next -> data);
+}
+
+/*
+head = &a  -> a를 가르킴
+a.Next = &b -> node a = {10, next = b}
+b.next = &c -> node b = {20, next = C}
+
+head -> Next -> data
+여기서
+head -> 는 a
+next -> b
+data 는 b.data이기때문에 20
+
+답 20
+
+추가해설
+/*
+head = &a;         // head는 a 노드를 가리킴
+a.Next = &b;       // a의 다음 노드는 b
+b.Next = &c;       // b의 다음 노드는 c
+
+연결 구조:
+head → a(10) → b(20) → c(30) → NULL
+
+head -> Next -> data
+= a.Next.data
+= b.data
+= 20
+
+결과: 20 출력
+*/
+
+*/

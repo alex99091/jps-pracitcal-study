@@ -1,0 +1,19 @@
+RIP(Routing Information Protocol)을 이용한 A에서 F까지의 최적 경로를 쓰시오.
+
+RIP는 홉(Hop) 수 기반의 라우팅 프로토콜이며, 링크의 가중치를 비용으로 계산하지 않습니다.
+즉, RIP에서는 링크 비용(문제 그림에 주어진 숫자)이 아닌, 라우터를 거치는 홉 수가 가장 적은 경로를 최적 경로로 판단합니다.
+
+비용이 아닌 홉 카운트를 기반으로 계산하면
+A - D - C - F 
+
+홉(Hop) 기반 (거리 벡터 방식, Distance Vector)
+
+대표 프로토콜: RIP (Routing Information Protocol)
+
+특징: 목적지까지 라우터를 거치는 횟수(홉 수)로만 판단합니다.
+
+링크 상태(Link-state) 기반
+
+대표 프로토콜: OSPF (Open Shortest Path First)
+
+특징: 홉 수 대신 링크 비용(cost) 을 기반으로 최적 경로를 계산합니다.

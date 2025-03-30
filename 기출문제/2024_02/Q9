@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[3][3] = {1,2,3,4,5,6,7,8,9};
+    int* parr[2] = {arr[1], arr[2]};
+    printf("%d", parr[1][1] + *(parr[1]+2) + ** parr)
+}
+
+/*
+풀이
+
+arr 은 다음과 같은형태임
+1 2 3
+4 5 6
+7 8 9
+
+int* parr[2] 는
+4 5 6 
+7 8 9 의 형태
+
+print구문을 보면
+parr[1][1] = 8
+*(parr[1]+2) = parr[1][2] = 9
+**parr = parr[0][0] =  4
+따라서 답은 8+9+4 = 21임
+*/

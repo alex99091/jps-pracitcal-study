@@ -1,0 +1,45 @@
+public class Test {
+    public static string rf(String str, int index, boolean[] seen) {
+        if(index < 0) return "";
+        char c = str.charAt(index);
+        String result = rf(str, index-1, seen);
+        if(!seen[c]) {
+            seen[c] = true;
+            return c + result;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String str = "abacabcd";
+        int len = str.length();
+        boolean[] seen = new boolean[256];
+        System.out.print(rf(str, len-1, seen));
+    }
+}
+
+/*
+len = 8
+rf("abcdabcd", 7, 비어있는 boolean[] seen 배열) 할당
+
+rf는 회기함수
+index 가 음수이면 "" 리턴하기때문에 종료됨
+char c = index위치에있는 str을 할당함
+str 은 실제 아래와같이 char로 구성됨
+0   1   2   3   4   5   6    7    8 
+'a' 'b' 'a' 'c' 'a' 'b' 'c' 'd' '\0'
+인덱스는 --로 1씩줄어듬 
+
+index	char	seen[]	seen 상태	        result 반환
+7	    'd'	    false	seen['d'] = true	'd'
+6   	'c'	    false	seen['c'] = true	'dc'
+5	    'b'	    false	seen['b'] = true	'dcb'
+4   	'a'	    false	seen['a'] = true	'dcba'
+3   	'c'	    true	skip	            'dcba'
+2   	'a'	    true	skip	            'dcba'
+1	    'b'	    true	skip	            'dcba'
+0   	'a'	    true	skip	            'dcba'
+
+역순 출력이기 때문에 
+답은 dcba임
+*/
