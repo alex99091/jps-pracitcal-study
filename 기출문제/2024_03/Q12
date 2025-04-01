@@ -1,0 +1,16 @@
+<R1> 과 <R2> 테이블을 참조하여 <SQL문>을 실행했을 때 출력하는 결과
+
+<R1>            <R2>
+A B C           C D E
+1 a x           x k k 
+2 b y           y k t
+3 c t           z p k
+
+<SQL문>
+SELECT B
+FROM R1
+WHERE C IN (SELECT C FROM R2 WHERE D = 'k');
+
+B
+a
+b

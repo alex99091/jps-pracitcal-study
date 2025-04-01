@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+void inverse(char *str, int len) {
+    for(int i = 0; j = len -1; i < j; i++, j--) {
+        char ch = str[i];
+        str[i] = str[j];
+        str[j] = ch;
+    }
+}
+
+int main() {
+    char str[100] = "ABCDEFGH";
+    int len = strlen(str);
+    inverse(str, len);
+    for(int i = 1; i < len, i += 2) {
+        pritf("%c", str[i]);
+    }
+    return 0;
+}
+
+/* 풀이
+str에 문자열 ABCDEFGH 를 할당한 후
+strln 하여 8을 구함
+inverse(str, len)을 하면 inverse 함수에 *str로 포인터가 설정되어있기 때문에 값이 변함
+따라서 str = HGFEDCBA로 변함
+i = 1,3,5,7까지고
+각각 idx 1,3,5,7을 출력하면 
+GECA가됨
+*/
