@@ -1,0 +1,26 @@
+다양한 IT기술과 방식들을 이용해 조직적으로 특정 기업이나 네트워크에 침투해 활동 거점을 마련한뒤 때를 기다리면서 보안을 무력화시키고 정보를 수집한 다음
+외부로 빼돌리는 형태의 공격으로, 일반적으로 공격은 침투, 검색, 수집 유출의 4단계로 실행
+
+보기
+MITM
+ATM
+XDR
+APT
+KEy Logger Attack
+사회공학기법
+TearDrop
+Smurfing
+
+정답: APT (Advanced Persistent Threat)
+
+APT는 다양한 기술을 활용하여 오랜 기간 잠복 후 정보 수집 및 유출을 시도하는 지능형 지속 위협입니다.
+
+
+MITM - Man In The Middle: 통신 중간에서 정보를 탈취하거나 조작하는 공격 방식
+ATM - Automated Teller Machine: 현금자동입출금기 (보안 공격 명칭 아님)
+XDR - Extended Detection and Response: 통합 보안 탐지·대응 플랫폼
+APT - Advanced Persistent Threat: 조직적인 침투 후 장기적 정보 수집 및 유출을 목적으로 하는 공격
+Key Logger Attack - 키보드 입력을 기록해 비밀번호 등 민감 정보를 수집하는 공격
+사회공학기법 - 사람의 심리를 이용해 정보를 탈취하는 비기술적 해킹 기법
+TearDrop - 비정상적인 IP 패킷 조각을 이용해 시스템 다운 유도하는 DoS 공격
+Smurfing - 스푸핑된 ICMP 패킷을 대량 전송하여 네트워크 마비를 유도하는 공격

@@ -1,0 +1,35 @@
+class firstArea {
+    int x, y;
+    public firstArea(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    public void print() {
+        System.out.println(x+y);
+    }
+}
+
+class secondArea extends firstArea {
+    int bb = 3;
+    public secondArea(int i) {
+        super(i, i+1);
+    }
+    public void print() {
+        System.out.pritln(bb*bb);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        firstArea st = new secondArea(10);
+        st.print();
+    }
+}
+
+/*
+풀이 secondArea(10) -> int = 10; super (10, 11);
+firstArea st = (10,11)
+st.print() 하면 자식이 부모의 print 인터페이스를 재정의하여 secondArea.print() 가 실행 = 3*3 = 9;
+답: 9
+
+*/
