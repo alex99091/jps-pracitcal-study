@@ -1,0 +1,58 @@
+요구사항 검증 방법
+    - 요구사항 검토: 요구사항 명세서의 오류 확인 및 표준 준수 여부 등 결함 여부를 수작업으로 분석
+    - 프로토타이핑: 사용자의 요구사항을 정확히 파악하기 위해 실제 개발될 소프트웨어 견본품을 만들어 최종결과물 예측
+    - 테스트설계: 요구사항은 테스트 할 수 있도록 작성
+    - CASE도구활용: 일관성 분석(Consistency Analysis)를 통해 요구사항의 추적/분석/관리 등을 확인
+
+미들웨어
+    - 운영체제와 응용프로그램, 또는 서버와 클라이언트 사이에서 다양한 서비스를 제공
+    
+    ㄱ. DB(DataBase): 데이터베이스 벤더에서 클라이언트와 DB를 연결하는 미들웨어
+    ㄴ. RPC(Remote Procedure Call, 원격 프로시저 호출): 응용 프로그램의 프로시저를 사용하여 마치 로컬 프로시저처럼 호출하는 미들웨어
+    ㄷ. MOM(Message Oriented Middleware, 메시지 지향 미들웨어): 메시지 기반의 비동기형 메시지 전달
+    ㄹ. TP-Monitor(Transaction Processing Monitor, 트랜잭션 처리 모니터): 온라인 트랜잭션 업무에서 트랜잭션을 처리 및 감시하는 미들웨어
+    ㅁ. ORB(Object Request Broker, 객체 요청 브로커): CORBA 표준 스펙을 구현한 객체 지향 미들웨어
+    ㅂ. WAS(Web Application Server): 사용자의 요구에 따라 변하는 동적인 콘텐츠를 처리하기 위한 미들웨어
+
+EAI
+    - Enterprise Application Integration은 기업 내 각종 애플리케이션 및 플랫폼 간의 정보전달, 연계 통합 등
+      상호 연동이 가능하게 해주는 솔루션
+
+    방식
+    ㄱ. Point-to-Point
+        - 가장 기본적인 애플리케이션 통합 방식
+    ㄴ. Hub & Spoke
+        - 단일 접점인 허브시스템을 통해 데이터를 전송하는 중앙 집중형 방식
+    ㄷ. Message Bus(ESB 방식)
+        - 애플리케이션 사이에 미들웨어를 두어 처리하는 방식
+    ㄹ. Bus Hybrid
+        - Hyb & Spoke 와 Message Bus의 혼합방식
+
+JSON
+    - JavaScript Object Notation은 웹과 컴퓨터 프로그램에서 용량이 적은 데이터를 교환하기 위해
+      데이터 객체를 속성,값의 쌍 형태로 표현하는 개방형 표준 포맷
+
+AJAX
+    - Asynchronous Javasciprt and XML은 자바 스크립트를 사용하여
+      클라이언트와 서버 간에 XML 데이터를 주고 받는 비동기 통신 기술
+
+IPsec(IP Security)
+    - 네트워크 계층에서 IP 패킷 단위의 데이터 변조 방지 및 은닉 기능을 제공하는 프로토콜
+    - 암호화, 복호화 모두 가능한 양방향 암호화 방식 사용
+
+SSL(Security Sockets Layer)
+    - TCP/IP 계층과 애플리케이션 계층 사이에서 인증, 암호화, 무결성을 보장하는 프로토콜
+
+S-HTTP(Secure Hypertext Transfer Protocol)
+    - 클라이언트와 서버 간에 전송되는 모든 메시지를 암호화하는 프로토콜
+
+데이터 무결성 검사도구
+    - Tripwire, AIDE, Samhain, Claymore, Slipwire Fcheck
+
+인터페이스 구현 검증도구
+    ㄱ. xUnit - 같은 테스트 코드를 여러번 작성하지 않게 도와주는 자동화 단위 테스트 프레임워크
+    ㄴ. STAF - 서비스 호출 및 컴포넌트 재사용 등 다양한 환경을 지원하는 테스트 프레임워크
+    ㄷ. FitNesse - 웹 기반 테스트 프레임워크
+    ㄹ. NTAF - FitNesse의 장점과 STAF의 장점을 합쳐 통합한 Naver의 자동화 프레임워크
+    ㅁ. Selenium - 다양한 브라우저 및 개발언어를 지원하는 웹 애플리케이션 테스트 프레임워크
+    ㅂ. watir - 인터프리터방식의 객체지향 언어인 Ruby를 사용하는 테스트 프레임워크

@@ -1,0 +1,17 @@
+연계서버
+    - 데이터를 전송형식에 맞게 변환하는 송/수신 수행
+
+송신 시스템
+    - 인터페이스 테이블 또는 파일 데이터를 형식에 변환 및 송신
+
+수신 시스템
+    - 수신 데이터를 인터페이스 테이블이나 파일로 생성
+
+XML(eXtensible Markup Language)
+    - 특수한 목적을 갖는 마크업 언어를 만드는데 사용되는 다목적 마크업 언어
+
+SOAP(Simple Object Access Protocol)
+    - 컴퓨터 네트워크상에서 HTTP/HTTPS, SMTP등을 이용하여 XML을 교환하기 위한 통신규약
+
+WSDL(Web Service Description Language)
+    - 웹 서비스와 관련된 서식이나 프로토콜 등을 표준적인 방법으로 기술하고 게시하기 위한 언어
