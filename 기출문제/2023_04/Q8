@@ -1,0 +1,23 @@
+<R>
+A B
+1 a
+2 b
+3 c
+
+<S>
+A B
+1 a
+2 c
+4 d
+
+select A from R
+Union 
+select A from S
+Order by a desc;
+
+답:
+A
+4
+3
+2
+1

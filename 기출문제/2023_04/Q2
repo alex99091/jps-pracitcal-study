@@ -1,0 +1,52 @@
+인터넷 애플리케이션에서 사용자 인증에 사용되는 표준 인증방법으로, 공개 API(OpenAPI)로 구현되었다.
+인터넷 사용자가 웹사이트나 애플리케이션에 비밀번호를 제공하지 않고 자신에게 접근 권한을 부여하여 사용할 수 있다.
+2010년 ETF에서 1.0이 공식 표준안으로 발표되었다.
+
+<보기>
+OpenId
+IDEA
+OAUTH
+SSPI
+SASL
+PEAP
+OIDC
+JASS
+
+답: OAuth 맞춤
+보기 해설좀
+
+
+✅ OAuth (정답)
+- 사용자 비밀번호 없이 권한 위임을 위한 표준 인증 프로토콜
+- 공개 API(OpenAPI) 기반, 토큰 기반 인증
+- 2010년 IETF에서 OAuth 1.0 표준화
+- 소셜 로그인(Google, Facebook 등)에 사용
+
+🔹 OpenID
+- 사용자 인증 프로토콜 (OAuth는 권한 위임, OpenID는 사용자 식별)
+- 종종 OAuth와 함께 사용되기도 함
+
+🔹 IDEA
+- 국제 데이터 암호화 알고리즘 (International Data Encryption Algorithm)
+- 대칭키 기반 암호 방식, 인증 프로토콜과는 무관
+
+🔹 SSPI
+- Security Support Provider Interface
+- 마이크로소프트의 인증용 API, Windows 전용
+
+🔹 SASL
+- Simple Authentication and Security Layer
+- 메일 서버 등에서 사용되는 인증 프레임워크
+
+🔹 PEAP
+- Protected Extensible Authentication Protocol
+- 무선 네트워크(Wi-Fi)에서의 인증을 위한 보안 프로토콜
+
+🔹 OIDC
+- OpenID Connect
+- OAuth 2.0 기반의 사용자 인증 확장 프로토콜
+- OAuth보다 나중에 나왔으며 지문 내용(2010년)에 부합하지 않음
+
+🔹 JAAS (오타: 문제에서는 JASS)
+- Java Authentication and Authorization Service
+- Java 플랫폼의 인증 및 권한 제어 시스템

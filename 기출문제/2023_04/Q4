@@ -1,0 +1,32 @@
+#include <stdio.h>
+struct insa {
+    char name[10];
+    int age;
+    struct insa* impl_a;
+    struct insa* impl_b;
+}
+
+main() {
+    struct insa p1 = {"Kim", 28, NULL, NULL};
+    struct insa p2 = {"Lee", 36, NULL, NULL};
+    struct insa p3 = {"Park", 41, NULL, NULL};
+    p1.impl_a = &p2;
+    p2.impl_b = &p3;
+    printf("%s\n", p1.impl_a -> name);
+    printf("%d", p2.impl_b -> age);
+}
+
+/*
+✅ . vs -> 차이
+표현	의미
+obj.member	구조체 변수에서 멤버 접근
+ptr->member	구조체 포인터에서 멤버 접근 ((*ptr).member와 동일)
+
+p1은 구조체 변수
+
+p1.impl_a는 struct insa*, 즉 구조체 포인터
+그럼 p1.impl_a -> name은?
+p1.impl_a는 포인터니까,
+멤버 접근할 땐 ->를 써야 맞아 ✅
+
+*/

@@ -1,0 +1,24 @@
+<클라우드 서비스 모델 정리: IaaS / PaaS / SaaS>
+
+1. IaaS (Infrastructure as a Service) - 인프라형 서비스
+- 기업관리 영역: OS, 미들웨어, 애플리케이션 등 직접 설치 및 운영
+- 서비스 제공 영역: 서버, 스토리지, 네트워크, 가상화 인프라
+- 예: AWS EC2, Microsoft Azure VM, Google Compute Engine
+
+2. PaaS (Platform as a Service) - 플랫폼형 서비스
+- 기업관리 영역: 애플리케이션 개발 및 데이터 관리
+- 서비스 제공 영역: OS, 런타임, 미들웨어, 개발 도구까지 제공
+- 예: Google App Engine, AWS Elastic Beanstalk, Heroku
+
+3. SaaS (Software as a Service) - 소프트웨어형 서비스
+- 기업관리 영역: 없음 (사용자 입장에서 단순 사용만)
+- 서비스 제공 영역: 전체 서비스 제공 (앱 + 데이터 + 인프라 포함)
+- 예: Gmail, Microsoft 365, Dropbox, Salesforce
+
+<요약 비교표>
+
+| 구분   | 기업이 관리 | 제공자가 제공 |
+|--------|-------------|----------------|
+| IaaS   | OS, 앱 등   | 서버, 네트워크 |
+| PaaS   | 앱 코드     | OS, 미들웨어 등 |
+| SaaS   | 없음        | 모든 요소 제공  |

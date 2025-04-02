@@ -1,0 +1,18 @@
+<데이터베이스 무결성 제약조건 정리>
+
+1. 개체 무결성 (Entity Integrity)
+- 기본키(Primary Key)는 NULL이 될 수 없고, 중복될 수 없음
+
+2. 참조 무결성 (Referential Integrity)
+- 외래키(Foreign Key)는 참조하는 기본키 값과 일치하거나 NULL이어야 함
+
+3. 도메인 무결성 (Domain Integrity)
+- 속성의 값은 정의된 도메인(자료형, 범위 등)을 벗어나면 안 됨
+- 예: 성적은 0~100 사이, 나이는 양수
+
+4. 고유 무결성 (Unique Integrity)
+- 특정 속성의 값은 테이블 내에서 중복되면 안 됨 (기본키 외 유일 제약)
+
+5. 사용자 정의 무결성 (User-Defined Integrity)
+- 사용자가 지정한 논리적 규칙을 지켜야 함
+- 예: 급여는 직급별로 최소 기준 이상이어야 한다 등

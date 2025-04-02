@@ -1,0 +1,36 @@
+class SuperObject {
+    public void draw() {
+        System.out.println("A");
+        draw();
+    }
+    public void paint() {
+        System.out.println("B");
+        draw();
+    }
+}
+class SubObject extends SuperObject {
+    public void paint() {
+        super.paint();
+        System.out.println("C");
+        draw();
+    }
+    public void draw() {
+        System.out.println("D");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        SuperObject a = new SubObject();
+        a.paint();
+        a.draw();
+    }
+}
+/* 풀이
+a.paint() 실행 -?
+super.paint(); ->부모객체의 paint()실행
+-> B 출력, draw()실행 = 자식의 draw (this.생략) -> D 출력
+C출력 -> D출력
+a.draw() -> D 출력
+답: BDCDD
+ * 
+ */
