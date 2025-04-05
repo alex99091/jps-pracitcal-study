@@ -1,0 +1,20 @@
+def clac(x, y):
+    x *= 3
+    y /= 3
+    print(x, y)
+    return x
+
+a, b = 3, 12
+a = calc(a, b)
+print(a, b)
+
+"""
+a = calc(3, 12)
+a = 9
+
+9, 4.0
+9, 12
+
+여기서 정수/정수 = 실수라 4.0으로 써야함
+
+"""
