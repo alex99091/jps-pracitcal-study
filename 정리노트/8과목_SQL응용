@@ -1,0 +1,79 @@
+DDL(Data Define Language)
+    - DB를 구축하거나 수정할 목적으로 사용하는언어: CREATE, ALTER, DROP
+
+CREATE INDEX
+    - 인덱스를 정의하는 명령문
+    - create [unique] index 인덱스명 on 테이블명[cluster]
+
+ALTER TABLE
+    - 테이블에 대한 정의를 변경하는 명령문
+    - alter table 테이블명 add 속성명 데이터타입
+    - alter table 테이블 명 drop column 속성명
+
+DROP
+    - 스키마, 도메인, 기본 테이벌, 뷰테이블 등을 제거하는 명령문
+    - drop table 테이블명 cascade : 제거할 요소를 참조하는 다른 모든 개체를 함께제거
+    - drop table 테이블 restrict: 다른 개체가 제거할 요소를 참조중일때 제거 취소
+
+DCL(Data Control Language)
+    - 데이터의 보안, 무결성, 회복, 병행 제어등을 정의하는데 사용하는 언어: commit, rollback, grant, revoke
+
+GRANT
+    - 권한부여 명령어
+    - grant 권한_리스트 on 개체 to 사용자 [with grant option]
+
+REVOKE
+    - 권한 취소 명령어
+    - revoke [grant option for] 권한_리스트 on 개체 from 사용자
+
+ROLLBACK
+    - 변경 후 아직 commit되지 않은 모든 내용들을 취소하고 데이터베이스를 이전상태로 되돌리는 명령어
+
+DML(Data Manipulation Language)
+    - 저장된 데이터를 실질적으로 관리하는데 사용되는 언어:select, insert, delete, update
+
+INSERT
+    - 삽입문
+    - insert into 테이블명 ([속성명]) values (데이터)
+
+DELETE
+    - 삭제문
+    - delete from 테이블명 where 조건
+
+UPDATE
+    -갱신문
+    - update 테이블명 set 속성명 = 속성명 where 조건
+
+SELECT
+    - 조회문
+    - select[predicate] 테이블명 from테이블명 where 조건 group by 속성명 having 조건 order by 속성명
+
+GROUP BY
+    - count : 튜플 수
+    - sum : 합계 수
+    - avg : 평균
+    - max : 최대값
+    - min : 최솟값
+    - stddev : 표준편차
+    - variance : 분산
+
+집합 연산자
+    - UNION : 합집합 = 중복 허용 X
+    - UNION ALL : 합집합 = 중복 허용
+    - INTERSECT :  교집합
+    - EXCEPT : 차집합
+
+JOIN
+    - 연관된 튜플들을 결합하여 하나의 새로운 릴레이션으로 반환
+        ✅ 보기 정의
+    용어	정의
+    세타조인(Theta Join)	조건식(=, <, > 등 비교 연산자 포함)을 이용해 튜플을 조인함.
+    동등조인(Equi Join)	세타조인의 특수한 형태로, = 연산자만 사용함.
+    자연조인(Natural Join)	동등조인 결과에서 중복된 속성을 제거한 조인. 공통 속성을 기준으로 자동 연결.
+    외부조인(Outer Join)	조건에 맞지 않는 튜플도 null로 채워서 결과에 포함시키는 조인.
+    교차조인(Cross Join)	모든 튜플의 곱집합. 조건 없이 조인.
+    셀프조인(Self Join)	같은 릴레이션을 두 번 조인. 자기 자신과 조인.
+    자동조인(Auto Join)	공식 용어는 아니고, 일반적으로 자연조인 또는 명시하지 않은 조인을 뜻할 때 사용됨. 혼동 주의!
+
+트리거
+    - 삽입, 갱신, 삭제 등의 이벤트가 발생할 때 관련 작업이 자동으로 수행되게 하는 절차형 SQL
