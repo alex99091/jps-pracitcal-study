@@ -1,0 +1,15 @@
+a = "engineer information programming"
+b = a[:3]
+c = a[4:6]
+d = a[29:]
+e = b + c + d
+print(e)
+
+"""
+풀이:
+b = a[:3] 0~3까지 = eng
+c = a[4:6] 4~6사이 = ne
+d = a[29:] 29부터 끝까지 = ing
+e = engneing
+출력값: engneing
+"""

@@ -1,0 +1,7 @@
+Drop view 학생 Cascade;
+
+<처리조건> 
+학생 뷰를 제거한다.
+학생 뷰를 참조하는 모든 데이터도 연쇄적으로 제거한다.
+
+restricted와 반대 답: cascade
